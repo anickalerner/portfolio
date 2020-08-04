@@ -1,0 +1,70 @@
+h1{
+    margin: 50px 0 0 30px;
+}
+.container.books table{
+    margin-top: 20px;
+}
+.container.books table td,
+.container.books table th{
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+}
+.book-title{
+    max-width: 350px;
+    word-wrap: break-word;
+}
+img.book-cover{
+    width: 100px;
+}
+.book-actions .btn{
+    margin-right: 10px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* add-book */
+.add-book{
+    margin: 20px 0;
+    padding: 20px;
+}
+#add-book-title{
+    width: 70%;
+}
+#add-book-price{
+    width: 30%;
+}
+#add-book-btn{
+    margin-top: 10px;
+}
+.update-mode .book-actions .btn-update::before{
+    content: "✔";
+}
+.action-message{
+    margin-top: 10px;
+    color: red;
+}
+.hidden{
+    display: none;
+}
+.modal{
+    left: 30%;
+}
+.modal-rating{
+    display: flex;
+    flex-direction: row;
+}
+.modal-rating .input-group{
+    align-items: center;
+    width: 30%;
+    margin: 0 auto;
+}
+.modal-rating .btn-number{
+    line-height: 1em;
+}
+.spinner-sign{
+    font-size: 24px;
+    margin-bottom: 5px;
+}

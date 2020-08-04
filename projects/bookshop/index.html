@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookshop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body onload="init()">
+    <h1>Welcome to My Bookshop</h1>
+    <div class="container add-book-container">
+        <button type="button" class="btn btn-link" onclick="onAddBookOpen()">Add a new book</button>
+        <section class="add-book border d-none">
+            <button type="button" class="close" aria-label="Close" onclick="closeAddBook()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label for="add-book-title">Book title</label>
+                <input type="text" class="form-control" id="add-book-title" placeholder="Enter book title">
+            </div>
+            <div class="flex-row">
+                <div class="form-group">
+                    <label for="add-book-price">Price</label>
+                    <input type="text" class="form-control" id="add-book-price" placeholder="Price in £">
+                </div>
+                <button type="button" class="btn btn-primary" id="add-book-btn" onClick="onAddBook()">Add book</button>
+            </div>
+        </section>
+
+    </div>
+    <div class="container books">
+
+    </div>
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-title">
+                        <h4>title</h4>
+                    </div>
+                    <div class="modal-price"></div>
+                    <div class="modal-image"></div>
+                    <div class="modal-rating">
+                        <div><label>Rate this book:</label>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" onclick="onBookRate(-1)">
+                                    <span class="plus spinner-sign">-</span>
+                                </button>
+                            </span>
+                            <input type="text" name="quant[1]" class="form-control input-number" id="rate-book-field"
+                                value="1" min="1" max="10">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" onclick="onBookRate(1)">
+                                    <span class="minus spinner-sign">+</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="onSaveModalChanges()">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/book-controller.js"></script>
+</body>
+
+</html>
